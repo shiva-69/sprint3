@@ -3,6 +3,11 @@ import React, { createContext } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  // code here
-  return <AuthContext.Provider>{children}</AuthContext.Provider>;
+  const [isAuth, toggleAuth] = React.useState(false);
+
+  const handleToggleAuth = () => {
+    toggleAuth(!isAuth);
+  }
+
+  return <AuthContext.Provider value={{isAuth, handleToggleAuth}}>{children}</AuthContext.Provider>;
 };

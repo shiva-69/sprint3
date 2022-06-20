@@ -1,7 +1,12 @@
 import React from "react";
+import { CartContext } from "../context/CartContext";
 
 const Home = () => {
-  return <div>Home</div>;
+  const {cartCount} = React.useContext(CartContext);
+  return <div>
+    {cartCount}
+
+  </div>;
 };
 
 export  {Home};
